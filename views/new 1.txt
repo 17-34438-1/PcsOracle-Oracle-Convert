@@ -1,0 +1,116 @@
+ if($org_Type_id == 78 || $org_Type_id == 81 || ($org_Type_id == 82 && ($section == "billop" || $section == "dcfo")) || $org_Type_id == 83)
+{
+if($supplyStatus == 1)
+{
+if($org_Type_id == 83 && $result[$i]['supply_type']=='burge' && $result[$i]['marine_aprv_st']==0)
+{
+$tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> </td>";
+}
+else if($org_Type_id == 81 && $result[$i]['supply_type']=='burge' && $result[$i]['demand_aprv_st']==0 && $result[$i]['marine_aprv_st']==1)
+{
+$tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> </td>";
+}
+else if($org_Type_id == 78 && ($eng_section == "SAECCT" || $eng_section == "SAENCT" || $eng_section == "SAEGCB") && $result[$i]['supply_type']=='shore' && ($result[$i]['eng_aprv_st']==0 || ($result[$i]['eng_aprv_st']==1 || $result[$i]['sr_sub_eng_aprv_st']==1) && $result[$i]['asst_eng_dispute_st']==1))
+{
+$tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> </td>";
+}
+else if($org_Type_id == 78 && $berthVal == 'G' && $eng_section == "SRSAE" && $result[$i]['supply_type']=='shore' && $result[$i]['eng_aprv_st']==1 && ($result[$i]['sr_sub_eng_aprv_st']==0 || ($result[$i]['sr_sub_eng_aprv_st']==1 && $result[$i]['asst_eng_dispute_st']==1)))
+{
+$tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> </td>";
+}
+else if($org_Type_id == 78 && $berthVal == 'G' && $eng_section == "AENG" && $result[$i]['supply_type']=='shore' && $result[$i]['sr_sub_eng_aprv_st']==1 && $result[$i]['asst_eng_aprv_st']==0 && $result[$i]['asst_eng_dispute_st']==0)
+{
+$tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> <button type='button' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#remarksModal' onclick='setAction(".$id.")'>Back</button></td>";
+}
+else if($org_Type_id == 78 && $berthVal != 'G' && $eng_section == "AENG" && $result[$i]['supply_type']=='shore' && $result[$i]['eng_aprv_st']==1 && $result[$i]['asst_eng_aprv_st']==0 && $result[$i]['asst_eng_dispute_st']==0)
+{
+$tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> <button type='button' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#remarksModal' onclick='setAction(".$id.")'>Back</button></td>";
+}
+else if($org_Type_id == 78 && $eng_section == "EXENCT" && $result[$i]['supply_type']=='shore' && $result[$i]['asst_eng_aprv_st']==1 && $result[$i]['xen_aprv_st']==0)
+{
+$tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> </td>";
+}
+// else if($org_Type_id == 78 && $eng_section == "DCEE" && $result[$i]['supply_type']=='shore' && $result[$i]['xen_aprv_st']==1 && $result[$i]['dcee_aprv_st']==0)
+// {
+//     $tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> </td>";
+// }
+// else if($org_Type_id == 82 && $section == "dcfo" && $result[$i]['dcfo_aprv_st']==0 && (($result[$i]['supply_type']=='shore' && $result[$i]['dcee_aprv_st']==1) || ($result[$i]['supply_type']=='burge' && $result[$i]['demand_aprv_st']==1)))
+// {
+//     $tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> </td>";
+// }
+else if($org_Type_id == 82 && $section == "acc" && $result[$i]['dcfo_aprv_st']==1 && $result[$i]['acc_aprv_st']==0 )
+{
+$tbl.="<td align='center'> <a href='".site_url('Vessel/waterDemandForward/'.$id)."' onclick='return confirmation()' class='mb-xs mt-xs mr-xs btn btn-xs btn-warning'> Forward </a> </td>";
+}
+else 
+if($org_Type_id == 82 && $section == "billop" && $result[$i]['acc_aprv_st']==1)
+{
+include("dbOracleConnection.php");																		
+$sql_chkOaDate = "SELECT off_port_arr
+FROM vsl_vessel_visit_details
+WHERE vsl_vessel_visit_details.ib_vyg='".$result[$i]['rotation_no']."' 
+AND off_port_arr IS NOT NULL AND off_port_arr!=''";
+
+$rslt_chkOaDate = oci_parse($con_sparcsn4_oracle,$sql_chkOaDate);
+oci_execute($rslt_chkOaDate);
+$results=array();
+$chkOaDate =oci_fetch_all($rslt_chkOaDate, $results, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+oci_free_statement($rslt_chkOaDate);
+$rslt_chkOaDate = oci_parse($con_sparcsn4_oracle,$sql_chkOaDate);
+oci_execute($rslt_chkOaDate);
+
+
+if($chkOaDate == 0)
+{
+// $tbl.="<td align='center'> <p class='mb-xs mt-xs mr-xs btn btn-xs btn-danger'> No Outer Anchorage Date </p> </td>";
+$tbl.="<td align='center'> <font color='red'><b>No Outer Anchorage Date</b></font> </td>";
+}
+else
+{
+if($result[$i]['bill_op_bill_st']==1)
+{
+$tbl.="<td align='center'> <font color='green'><b>Bill Generated</b></font> </td>";
+}
+else
+{														
+$oaDate = "";
+while(($row_chkOaDate = oci_fetch_object($rslt_chkOaDate))!=false)
+{
+$oaDate = $row_chkOaDate->OFF_PORT_ARR;
+}
+
+$sql_dollarRate = "SELECT rate
+FROM billing.bil_currency_exchange_rates
+WHERE DATE(effective_date)=DATE('$oaDate')";
+// echo $sql_dollarRate;
+$rslt_dollarRate = mysqli_query($con_sparcsn4,$sql_dollarRate);
+$isExist = mysqli_num_rows($rslt_dollarRate);
+
+if($isExist>0)
+{
+$tbl.="<td align='center'>
+<a class='btn btn-xs btn-primary' href='".site_url('VesselBill/Generate_WaterSupply_Bill/'.str_replace('/','_',$result[$i]['rotation_no']))."' onclick='return confirMsg();' style='color:white'>Generate Bill</a>
+</td>";
+}
+else
+{
+$tbl.="<td align='center'>
+<a class='btn btn-xs btn-danger' href='".site_url('Vessel/usdtoBdtExchangeRateform/')."' 
+style='color:white'>
+<u>Rate Setting</u>
+</a>
+</td>";
+}
+}
+}
+}
+else
+{
+$tbl.="<td align='center'> <p class='mb-xs mt-xs mr-xs btn btn-xs btn-primary' disabled> Forward </p> </td>";
+}
+}
+else
+{
+$tbl.="<td align='center'> <p class='mb-xs mt-xs mr-xs btn btn-xs btn-primary'> Event not created </p> </td>";
+}
+}

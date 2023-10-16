@@ -1,0 +1,152 @@
+	function savefireWorkServiceFormExtended()
+	{
+		//print_r($this->session->all_userdata());
+		$session_id = $this->session->userdata('value');
+		$LoginStat = $this->session->userdata('LoginStat');
+	
+		if($LoginStat!="yes")
+		{
+			$this->logout();
+		}
+		else
+		{
+			$rotation = trim($this->input->post('rotation'));
+			$service_date = trim($this->input->post('service_date'));
+			$firemanHRS = trim($this->input->post('firemanHRS'));
+			$firepumpHRS = trim($this->input->post('firepumpHRS'));
+			$fireofficerHRS = trim($this->input->post('fireofficerHRS'));
+			$fireEngineHRS = trim($this->input->post('fireEngineHRS'));
+			$login_id = $this->session->userdata('login_id');
+			$ipAddr = $_SERVER['REMOTE_ADDR'];
+
+			$userChk = "SELECT COUNT(*) as rtnValue FROM base_user where base_user.buser_userid ='$login_id'";			 
+			$userChkRtn = $this->bm->dataReturn($userChk);
+			
+			if($userChkRtn<1)
+			{
+				$msg = "<font color='red' size='4'><strong>Sorry! User: $login_id does not exist in N4.</strong></font>";									
+			}
+			else
+			{
+
+			$duplicateChkQuery = "SELECT count(*) as rtnValue FROM ctmsmis.hotwork_demand 
+								WHERE rotation = '$rotation' AND service_date='$service_date' AND fire_dpt_aprv_st = 1";
+			$duplicateChk = $this->bm->dataReturnDb2($duplicateChkQuery);
+
+			if($duplicateChk>0)
+			{
+				$title = "Hot Work Service Forward List";
+		
+				$approvedListQuery = "SELECT * FROM ctmsmis.hotwork_demand WHERE fire_dpt_aprv_st = 1 ORDER BY hotwork_demand.id DESC";
+				$approvedList = $this->bm->dataSelectDb2($approvedListQuery);
+
+				$data['result'] = $approvedList;
+				$data['title'] = $title;
+				$data['msg'] = "";
+
+				$this->load->view('cssAssetsList');
+				$this->load->view('headerTop');
+				$this->load->view('sidebar');
+				$this->load->view('hotWorkDemandApproveList',$data);
+				$this->load->view('jsAssetsList');
+				
+			}
+			else
+			{
+				$msg="";
+
+				$igmMasterIdQuery = "SELECT * FROM igm_masters WHERE Import_Rotation_No = '$rotation'";
+				$igmMasters = $this->bm->dataSelectDB1($igmMasterIdQuery);
+
+				$eventQuery="SELECT vsl_vessel_visit_details.vvd_gkey,argo_carrier_visit.id as visit_id, vsl_vessels.name AS vessel_name,
+				to_char(vsl_vessel_visit_details.start_work,'yyyy-mm-dd') AS start_work
+				FROM vsl_vessel_visit_details 
+				INNER JOIN argo_carrier_visit ON argo_carrier_visit.cvcvd_gkey=vsl_vessel_visit_details.vvd_gkey
+				INNER JOIN vsl_vessels ON vsl_vessel_visit_details.vessel_gkey=vsl_vessels.gkey
+				WHERE ib_vyg='$rotation'";
+				//echo  $eventQuery;
+				//return;
+				$eventResult=$this->bm->dataSelect($eventQuery);
+				$igm_master_id = null;
+				$vsl_name="";
+				$vvd_gkey="";
+				$visit_id="";
+				$berth_hr="";
+				$quantity="";
+				$unit="";
+				$berth_date="";
+				
+			//	if(count($igmMasters)>0 and count($eventResult)>0){
+				if(count($eventResult)>0){
+					@$igm_master_id = $igmMasters[0]['id'];
+					$vsl_name = $eventResult[0]['VESSEL_NAME'];
+					$vvd_gkey = $eventResult[0]['VVD_GKEY'];
+					$visit_id = $eventResult[0]['VISIT_ID'];
+					$berth_date=$eventResult[0]['START_WORK'];
+					//$quantity=$eventResult[0]['quantity'];
+					//$unit=$eventResult[0]['quantity_unit'];
+					if($firemanHRS>0)
+					{
+						$berth_hr=$firemanHRS." ".'HOURS';
+					}				
+					
+					$intsertQuery = "INSERT INTO ctmsmis.hotwork_demand(igm_masters_id,rotation,vessel_name,service_date,start_time,
+					start_date,entry_by,entry_at,entry_ip,fire_dpt_aprv_st,fire_dpt_aprv_at,fire_dpt_aprv_by,fire_dpt_aprv_ip, firemanHrs, firepumpHrs) 
+					VALUES('$igm_master_id','$rotation','$vsl_name','$service_date','$berth_hr','$berth_date','$login_id',NOW(),
+					'$ipAddr',1,NOW(),'$login_id','$ipAddr', '$firemanHRS', '$firepumpHRS')";
+					//return;
+					if($this->bm->dataInsertDB2($intsertQuery)){
+						if($firemanHRS>0)
+						{
+							$strInsrtFireManEvent = "INSERT INTO srv_event(operator_gkey,complex_gkey,facility_gkey,yard_gkey,placed_by,placed_time,event_type_gkey,applied_to_class,applied_to_gkey,applied_to_natural_key,quantity,quantity_unit,created,creator)
+							VALUES('1','1','1','1','$login_id',CURRENT_DATE,'213','VV','$vvd_gkey','$visit_id','$firemanHRS','HOURS',CURRENT_DATE,'$login_id')";
+							$strInsrtFireManEventST=$this->bm->dataInsertdb5($strInsrtFireManEvent);
+						}
+						
+						if($firepumpHRS>0)
+						{
+							$strInsrtFirePumpEvent = "INSERT INTO srv_event(operator_gkey,complex_gkey,facility_gkey,yard_gkey,placed_by,placed_time,event_type_gkey,applied_to_class,applied_to_gkey,applied_to_natural_key,quantity,quantity_unit,created,creator)
+							VALUES('1','1','1','1','$login_id',CURRENT_DATE,'211','VV','$vvd_gkey','$visit_id','$firepumpHRS','HOURS',CURRENT_DATE,'$login_id')";
+							$strInsrtFirePumpEventST=$this->bm->dataInsertdb5($strInsrtFirePumpEvent);
+						}
+						if($fireofficerHRS>0)
+						{
+							$strInsrtFireOfficerEvent = "INSERT INTO srv_event(operator_gkey,complex_gkey,facility_gkey,yard_gkey,placed_by,placed_time,event_type_gkey,applied_to_class,applied_to_gkey,applied_to_natural_key,quantity,quantity_unit,created,creator)
+							VALUES('1','1','1','1','$login_id',CURRENT_DATE,'223','VV','$vvd_gkey','$visit_id','$fireofficerHRS','HOURS',CURRENT_DATE,'$login_id')";
+							$strInsrtFireOfficerEventST=$this->bm->dataInsertdb5($strInsrtFireOfficerEvent);
+						}
+						if($fireEngineHRS>0)
+						{
+							$strInsrtFireEngineEvent = "INSERT INTO srv_event(operator_gkey,complex_gkey,facility_gkey,yard_gkey,placed_by,placed_time,event_type_gkey,applied_to_class,applied_to_gkey,applied_to_natural_key,quantity,quantity_unit,created,creator)
+							VALUES('1','1','1','1','$login_id',CURRENT_DATE,'219','VV','$vvd_gkey','$visit_id','$fireEngineHRS','HOURS',CURRENT_DATE,'$login_id')";
+							$strInsrtFireEngineEventST=$this->bm->dataInsertdb5($strInsrtFireEngineEvent);
+						}
+						if($strInsrtFireManEventST>0 || $strInsrtFirePumpEventST>0 || $strInsrtFireOfficerEventST>0 || $strInsrtFireEngineEventST>0)
+						{
+							$msg = "<font color='green' size='4'><strong>Rotation: $rotation.  Hot Work Service Successfully Submitted.</strong></font>";
+						}
+						else
+						{
+							$msg = "<font color='red' size='4'><strong>Rotation: $rotation.  Failed! Please Try Again.</strong></font>";
+						}
+						
+					}
+					else{
+						$msg = "<font color='red' size='4'><strong>Failed! Please Try Again...</strong></font>";
+
+					}
+				}
+				else{
+					$msg = "<font color='red' size='4'><strong>Rotation: $rotation, Hot work Service not recorded yet.</strong></font>";
+				}
+			  }
+			}
+			$data['title']="Hot Work Service Form";
+			$data['msg'] = $msg;
+			$this->load->view('cssAssets');
+			$this->load->view('headerTop');
+			$this->load->view('sidebar');
+			$this->load->view('fireWorkServiceExtendedForm',$data);
+			$this->load->view('jsAssets');
+		}	
+    }

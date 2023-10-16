@@ -1,0 +1,50 @@
+
+cat---export
+
+SELECT inv_unit.id, inv_unit_fcy_visit.transit_state,freight_kind,
+     
+						(CASE WHEN   
+						   inv_unit_fcy_visit.last_pos_loctype ='YARD'   
+							  THEN   
+						   (  
+						   'Position:' || NVL(CONVERT(inv_unit_fcy_visit.last_pos_slot , 'utf8'),'') ||
+						   ', MLO:' || ref_bizunit_scoped.id || ',Status : ' || inv_unit.freight_kind ||
+						   ',Category:' || inv_unit.category || ',Gate In:' || NVL(inv_unit_fcy_visit.time_in,'') || ', Height : ' ||
+						  substr(ref_equip_type.nominal_height,-2)/10 || ', Size : ' || substr(ref_equip_type.nominal_length,-2) || ',ISO Code : ' || ref_equip_type.id
+						  ) 
+							 WHEN   
+								 inv_unit_fcy_visit.last_pos_loctype ='VESSEL'    
+							 THEN  
+							  ('Position : ' || NVL(CONVERT(inv_unit_fcy_visit.last_pos_name , 'utf8'),'') || ',Vessel Name : ' || vsl_vessels.name || ' , Category : ' || inv_unit.category || ', Load Time : ' || NVL(inv_unit_fcy_visit.time_load,'') ||', MLO : ' || ref_bizunit_scoped.id || ', Status : ' || inv_unit.freight_kind || ', Height : ' ||
+						  substr(ref_equip_type.nominal_height,-2)/10 || ', Size : ' || substr(ref_equip_type.nominal_length,-2) || ', ISO Code : ' || ref_equip_type.id
+							)ELSE 
+						  ('PRE ADVISED : ' || NVL(CONVERT(inv_unit_fcy_visit.last_pos_name , 'utf8'),'') || ',Category : ' || (inv_unit.category || ', ' || 
+						  NVL(
+							  (SELECT ( CASE WHEN sub_type='DE' THEN 'Dray Off'   
+							   WHEN sub_type='DI' THEN 'Delivery Import'   
+							   WHEN sub_type='DM' THEN 'Delivery EMPTY'   
+							   WHEN sub_type='RE' THEN 'INBOUND'   
+							   END  || ' to Offdock :' || NAME) AS d FROM road_truck_transactions   
+							   inner JOIN ref_bizunit_scoped ON road_truck_transactions.trkco_id=ref_bizunit_scoped.id   
+							   WHERE unit_gkey=inv_unit.gkey Fetch first 1 rows only)
+							 ,''
+							 )
+							   ) ||  ',MLO : ' ||  ref_bizunit_scoped.id ||  ',Status : ' ||  inv_unit.freight_kind || ', Height : ' || 
+						  substr(ref_equip_type.nominal_height,-2)/10 || ', Size : ' || substr(ref_equip_type.nominal_length,-2) || ',ISO Code : ' || ref_equip_type.id   
+							   )   
+							 
+						 
+						  END) 
+					  AS dsc 
+					   
+					  FROM inv_unit
+					  inner join inv_unit_fcy_visit on inv_unit_fcy_visit.unit_gkey=inv_unit.gkey
+					  INNER JOIN argo_carrier_visit ON (argo_carrier_visit.gkey=inv_unit.declrd_ib_cv or argo_carrier_visit.gkey=inv_unit.cv_gkey)
+					  INNER JOIN argo_visit_details ON argo_visit_details.gkey=argo_carrier_visit.cvcvd_gkey
+					  INNER JOIN vsl_vessel_visit_details ON vsl_vessel_visit_details.vvd_gkey=argo_visit_details.gkey
+					  inner join vsl_vessels on vsl_vessels.gkey=vsl_vessel_visit_details.vessel_gkey
+					  inner join  ref_bizunit_scoped  ON inv_unit.line_op = ref_bizunit_scoped.gkey
+					  INNER JOIN ref_equipment ON inv_unit.eq_gkey=ref_equipment.gkey
+					  INNER JOIN ref_equip_type ON ref_equipment.eqtyp_gkey=ref_equip_type.gkey 
+					  inner join inv_goods desti on desti.gkey=inv_unit.goods 
+					  WHERE inv_unit.id ='$cont_id' ORDER BY inv_unit.gkey DESC fetch FIRST 1 rows only

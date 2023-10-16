@@ -1,0 +1,581 @@
+2021-01-17 17:57:32: 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  file_put_contents(/var/www/html/pcs/application/views/phpqrcode/cache/mask_0/mask_21_0.dat): failed to open stream: Permission denied</p>
+<p>Filename: phpqrcode/qrmask.php</p>
+<p>Line Number: 155</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 155<br />
+			Function: file_put_contents			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 311<br />
+			Function: makeMaskNo			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 216<br />
+			Function: mask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 240<br />
+			Function: encodeMask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 279<br />
+			Function: encodeInput			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 467<br />
+			Function: encodeString			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 485<br />
+			Function: encode			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 286<br />
+			Function: encodePNG			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/truckEntranceApplicationPDF.php<br />
+			Line: 193<br />
+			Function: png			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/controllers/ShedBillController.php<br />
+			Line: 3814<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>2021-01-17 11:57:32: 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  file_put_contents(/var/www/html/pcs/application/views/phpqrcode/cache/mask_0/mask_21_0.dat): failed to open stream: Permission denied</p>
+<p>Filename: phpqrcode/qrmask.php</p>
+<p>Line Number: 155</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 155<br />
+			Function: file_put_contents			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 311<br />
+			Function: makeMaskNo			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 216<br />
+			Function: mask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 240<br />
+			Function: encodeMask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 279<br />
+			Function: encodeInput			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 467<br />
+			Function: encodeString			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 485<br />
+			Function: encode			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 286<br />
+			Function: encodePNG			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/truckEntranceApplicationPDF.php<br />
+			Line: 193<br />
+			Function: png			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/controllers/ShedBillController.php<br />
+			Line: 3829<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>2021-01-19 16:40:59: empty string!!!2021-01-19 10:40:59: empty string!!!2021-01-19 16:42:00: empty string!!!2021-01-19 10:42:01: empty string!!!2021-01-21 13:09:07: empty string!!!2021-01-21 07:11:07: empty string!!!2021-01-21 13:11:07: empty string!!!2021-01-21 07:13:07: empty string!!!2021-01-21 13:13:08: empty string!!!2021-01-21 07:15:08: empty string!!!2021-01-28 15:01:26: empty string!!!2021-01-28 09:03:27: empty string!!!2021-01-28 15:24:42: empty string!!!2021-01-28 09:26:42: empty string!!!2021-01-30 20:37:18: empty string!!!2021-01-31 12:24:47: empty string!!!2021-01-31 06:24:47: empty string!!!2021-01-31 14:04:52: empty string!!!2021-01-31 08:04:52: empty string!!!2021-01-31 14:05:00: empty string!!!2021-01-31 08:05:00: empty string!!!2021-02-02 09:44:33: empty string!!!2021-02-02 03:44:33: empty string!!!2021-02-07 13:32:35: empty string!!!2021-02-07 13:33:01: empty string!!!2021-02-10 13:15:14: empty string!!!2021-02-10 07:15:14: empty string!!!2021-02-10 14:06:09: empty string!!!2021-02-10 08:06:09: empty string!!!2021-03-18 09:57:45: empty string!!!2021-04-18 10:47:38: empty string!!!2021-04-18 05:47:38: empty string!!!2021-04-21 10:19:59: empty string!!!2021-04-21 13:09:43: empty string!!!2021-04-21 08:09:44: empty string!!!2021-05-02 21:18:08: empty string!!!2021-05-02 23:10:31: empty string!!!2021-05-02 18:10:31: empty string!!!2021-05-03 01:44:22: empty string!!!2021-05-03 17:45:40: empty string!!!2021-05-18 12:49:45: empty string!!!2021-05-18 07:49:46: empty string!!!2021-05-24 10:08:39: empty string!!!2021-05-24 05:08:39: empty string!!!2021-05-27 13:57:18: empty string!!!2021-05-27 08:57:18: empty string!!!2021-05-27 13:57:36: empty string!!!2021-05-27 08:57:37: empty string!!!2021-05-27 13:57:44: empty string!!!2021-05-27 08:57:44: empty string!!!2021-06-01 15:15:39: empty string!!!2021-06-01 10:15:40: empty string!!!2021-06-01 15:15:42: empty string!!!2021-06-01 10:15:42: empty string!!!2021-06-02 15:02:57: empty string!!!2021-06-02 17:00:58: empty string!!!2021-06-02 12:00:58: empty string!!!2021-06-14 19:12:47: empty string!!!2021-06-16 10:13:56: empty string!!!2021-06-16 10:13:58: empty string!!!2021-06-16 10:13:58: empty string!!!2021-06-17 17:31:08: empty string!!!2021-06-17 17:33:46: empty string!!!2021-06-17 20:45:56: empty string!!!2021-06-17 15:45:57: empty string!!!2021-06-17 22:15:15: empty string!!!2021-06-17 22:15:15: empty string!!!2021-06-17 22:15:15: empty string!!!2021-06-17 22:15:15: empty string!!!2021-06-17 22:15:15: empty string!!!2021-06-18 12:27:06: empty string!!!2021-06-18 07:27:06: empty string!!!2021-06-18 12:27:40: empty string!!!2021-06-18 07:27:40: empty string!!!2021-06-18 12:37:53: empty string!!!2021-06-18 07:37:54: empty string!!!2021-06-22 11:59:50: empty string!!!2021-06-22 06:59:50: empty string!!!2021-06-23 20:14:31: empty string!!!2021-06-23 20:14:35: empty string!!!2021-06-23 20:16:57: empty string!!!2021-06-25 13:34:01: empty string!!!2021-06-25 08:34:02: empty string!!!2021-06-25 13:35:49: empty string!!!2021-06-25 08:35:49: empty string!!!2021-06-25 13:36:10: empty string!!!2021-06-25 08:36:11: empty string!!!2021-07-12 15:48:11: empty string!!!2021-07-12 16:50:54: empty string!!!2021-07-12 17:52:47: empty string!!!2021-07-12 18:17:22: empty string!!!2021-07-12 18:18:25: empty string!!!2021-07-12 18:55:05: empty string!!!2021-07-12 19:56:16: empty string!!!2021-07-12 20:57:11: empty string!!!2021-07-12 22:02:20: empty string!!!2021-07-12 23:05:58: empty string!!!2021-07-13 00:10:04: empty string!!!2021-07-13 01:13:17: empty string!!!2021-07-13 02:17:25: empty string!!!2021-07-13 03:21:27: empty string!!!2021-07-13 04:24:24: empty string!!!2021-07-13 05:26:22: empty string!!!2021-07-13 06:30:38: empty string!!!2021-07-13 07:34:08: empty string!!!2021-07-13 08:36:58: empty string!!!2021-07-13 09:39:51: empty string!!!2021-07-13 10:43:48: empty string!!!2021-07-13 11:46:56: empty string!!!2021-07-13 12:50:44: empty string!!!2021-07-13 13:55:10: empty string!!!2021-07-13 14:58:11: empty string!!!2021-07-13 16:01:11: empty string!!!2021-07-13 17:05:46: empty string!!!2021-07-13 18:09:33: empty string!!!2021-07-13 19:12:40: empty string!!!2021-07-13 20:16:17: empty string!!!2021-07-13 21:22:05: empty string!!!2021-07-13 22:25:24: empty string!!!2021-07-13 23:29:34: empty string!!!2021-07-14 00:33:12: empty string!!!2021-07-14 01:37:26: empty string!!!2021-07-14 02:41:20: empty string!!!2021-07-14 03:42:43: empty string!!!2021-07-14 04:45:07: empty string!!!2021-07-14 05:47:17: empty string!!!2021-07-14 06:48:54: empty string!!!2021-07-14 07:51:03: empty string!!!2021-07-14 08:54:37: empty string!!!2021-07-14 09:58:37: empty string!!!2021-07-14 11:01:18: empty string!!!2021-07-14 12:05:38: empty string!!!2021-07-14 13:08:07: empty string!!!2021-07-14 14:11:11: empty string!!!2021-07-14 15:16:37: empty string!!!2021-07-14 16:21:08: empty string!!!2021-07-14 17:24:20: empty string!!!2021-07-14 18:28:34: empty string!!!2021-07-14 19:31:26: empty string!!!2021-07-14 20:35:00: empty string!!!2021-07-14 21:39:03: empty string!!!2021-07-14 22:41:49: empty string!!!2021-07-14 23:45:21: empty string!!!2021-07-15 00:48:15: empty string!!!2021-07-15 01:51:16: empty string!!!2021-07-15 02:54:34: empty string!!!2021-07-15 03:55:53: empty string!!!2021-07-15 04:57:35: empty string!!!2021-07-15 05:59:09: empty string!!!2021-07-15 07:01:32: empty string!!!2021-07-15 08:03:53: empty string!!!2021-07-15 09:06:17: empty string!!!2021-07-15 10:10:29: empty string!!!2021-07-15 11:12:38: empty string!!!2021-07-15 12:15:28: empty string!!!2021-07-15 13:20:27: empty string!!!2021-07-15 15:34:01: empty string!!!2021-07-15 16:41:21: empty string!!!2021-07-15 17:49:25: empty string!!!2021-07-15 18:52:32: empty string!!!2021-07-15 19:55:36: empty string!!!2021-07-15 20:58:24: empty string!!!2021-07-15 22:01:51: empty string!!!2021-07-15 23:05:05: empty string!!!2021-07-16 00:09:52: empty string!!!2021-07-16 01:14:39: empty string!!!2021-07-16 02:18:11: empty string!!!2021-07-16 03:19:13: empty string!!!2021-07-16 04:21:56: empty string!!!2021-07-16 05:23:08: empty string!!!2021-07-16 06:25:16: empty string!!!2021-07-16 07:27:31: empty string!!!2021-07-16 08:30:56: empty string!!!2021-07-16 09:33:43: empty string!!!2021-07-16 10:36:23: empty string!!!2021-07-16 11:39:19: empty string!!!2021-07-16 12:42:06: empty string!!!2021-07-16 13:45:08: empty string!!!2021-07-16 14:47:32: empty string!!!2021-07-16 15:51:23: empty string!!!2021-07-16 16:54:24: empty string!!!2021-07-16 17:59:22: empty string!!!2021-07-16 19:02:07: empty string!!!2021-07-16 20:07:15: empty string!!!2021-07-16 21:10:52: empty string!!!2021-07-16 22:15:03: empty string!!!2021-07-16 23:18:45: empty string!!!2021-07-17 00:23:10: empty string!!!2021-07-17 01:29:34: empty string!!!2021-07-17 02:33:38: empty string!!!2021-07-17 03:40:08: empty string!!!2021-07-17 04:41:40: empty string!!!2021-07-17 05:42:51: empty string!!!2021-07-17 06:44:47: empty string!!!2021-07-17 07:46:53: empty string!!!2021-07-17 08:50:36: empty string!!!2021-07-17 09:52:52: empty string!!!2021-07-17 10:56:34: empty string!!!2021-07-17 11:59:20: empty string!!!2021-07-17 13:02:24: empty string!!!2021-07-17 14:04:53: empty string!!!2021-07-17 15:07:32: empty string!!!2021-07-17 16:10:56: empty string!!!2021-07-17 17:14:22: empty string!!!2021-07-17 18:17:52: empty string!!!2021-07-17 19:20:56: empty string!!!2021-07-17 20:23:57: empty string!!!2021-07-17 21:27:03: empty string!!!2021-07-17 22:29:42: empty string!!!2021-07-17 23:32:43: empty string!!!2021-07-18 00:36:02: empty string!!!2021-07-18 01:38:45: empty string!!!2021-07-18 02:42:39: empty string!!!2021-07-18 03:44:08: empty string!!!2021-07-18 04:45:56: empty string!!!2021-07-18 05:47:26: empty string!!!2021-07-18 06:50:07: empty string!!!2021-07-18 07:52:55: empty string!!!2021-07-18 08:55:12: empty string!!!2021-07-18 09:59:18: empty string!!!2021-07-18 11:02:26: empty string!!!2021-07-18 12:05:45: empty string!!!2021-07-18 13:08:40: empty string!!!2021-07-18 14:11:23: empty string!!!2021-07-18 15:15:51: empty string!!!2021-07-18 16:19:20: empty string!!!2021-07-18 17:22:02: empty string!!!2021-07-18 18:25:18: empty string!!!2021-07-18 19:28:22: empty string!!!2021-07-18 20:31:54: empty string!!!2021-07-18 21:35:03: empty string!!!2021-07-18 22:38:12: empty string!!!2021-07-18 23:41:31: empty string!!!2021-07-19 00:45:13: empty string!!!2021-07-19 01:50:18: empty string!!!2021-07-19 02:53:17: empty string!!!2021-07-19 03:54:43: empty string!!!2021-07-19 04:56:19: empty string!!!2021-07-19 05:57:32: empty string!!!2021-07-19 06:59:44: empty string!!!2021-07-19 08:01:43: empty string!!!2021-07-19 09:04:18: empty string!!!2021-07-19 10:07:26: empty string!!!2021-07-19 11:10:20: empty string!!!2021-07-19 12:12:33: empty string!!!2021-07-19 13:15:47: empty string!!!2021-07-19 14:18:50: empty string!!!2021-07-19 15:22:11: empty string!!!2021-07-19 16:25:42: empty string!!!2021-07-19 17:28:11: empty string!!!2021-07-19 18:31:35: empty string!!!2021-07-19 19:36:07: empty string!!!2021-07-19 20:39:06: empty string!!!2021-07-19 21:41:32: empty string!!!2021-07-19 22:44:11: empty string!!!2021-07-19 23:48:10: empty string!!!2021-07-20 00:51:34: empty string!!!2021-07-20 01:55:24: empty string!!!2021-07-20 02:57:46: empty string!!!2021-07-20 03:58:55: empty string!!!2021-07-20 05:00:38: empty string!!!2021-07-20 06:02:01: empty string!!!2021-07-20 07:03:49: empty string!!!2021-07-20 08:06:19: empty string!!!2021-07-20 09:09:07: empty string!!!2021-07-20 10:12:32: empty string!!!2021-07-20 11:15:42: empty string!!!2021-07-20 12:19:17: empty string!!!2021-07-20 13:22:59: empty string!!!2021-07-20 14:25:23: empty string!!!2021-07-20 15:27:56: empty string!!!2021-07-20 16:30:35: empty string!!!2021-07-20 17:33:50: empty string!!!2021-07-20 18:37:12: empty string!!!2021-07-20 19:40:07: empty string!!!2021-07-20 20:44:04: empty string!!!2021-07-20 21:48:09: empty string!!!2021-07-20 22:52:53: empty string!!!2021-07-20 23:57:07: empty string!!!2021-07-21 01:02:17: empty string!!!2021-07-21 02:06:19: empty string!!!2021-07-21 03:10:18: empty string!!!2021-07-21 04:12:36: empty string!!!2021-07-21 05:13:56: empty string!!!2021-07-21 06:16:01: empty string!!!2021-07-21 07:17:19: empty string!!!2021-07-21 08:18:38: empty string!!!2021-07-21 09:20:58: empty string!!!2021-07-21 10:23:54: empty string!!!2021-07-21 11:27:07: empty string!!!2021-07-21 12:29:40: empty string!!!2021-07-21 13:33:13: empty string!!!2021-07-21 14:36:29: empty string!!!2021-07-21 15:39:23: empty string!!!2021-07-21 16:42:24: empty string!!!2021-07-21 17:46:05: empty string!!!2021-07-21 18:51:05: empty string!!!2021-07-21 19:57:21: empty string!!!2021-07-21 21:00:09: empty string!!!2021-07-21 22:04:16: empty string!!!2021-07-21 23:07:20: empty string!!!2021-07-22 00:10:19: empty string!!!2021-07-22 01:13:25: empty string!!!2021-07-22 02:16:22: empty string!!!2021-07-22 03:17:48: empty string!!!2021-07-22 04:19:44: empty string!!!2021-07-22 05:21:18: empty string!!!2021-07-22 06:22:59: empty string!!!2021-07-22 07:25:16: empty string!!!2021-07-22 08:27:36: empty string!!!2021-07-22 09:30:12: empty string!!!2021-07-22 10:33:07: empty string!!!2021-07-22 11:35:50: empty string!!!2021-07-22 12:39:02: empty string!!!2021-07-22 13:42:16: empty string!!!2021-07-22 14:44:46: empty string!!!2021-07-22 15:48:03: empty string!!!2021-07-22 16:50:23: empty string!!!2021-07-22 17:53:30: empty string!!!2021-07-22 18:57:59: empty string!!!2021-07-22 20:06:59: empty string!!!2021-07-22 21:13:52: empty string!!!2021-07-22 22:22:51: empty string!!!2021-07-22 23:29:49: empty string!!!2021-07-23 00:35:13: empty string!!!2021-07-23 01:41:33: empty string!!!2021-07-23 02:51:56: empty string!!!2021-07-23 03:59:25: empty string!!!2021-07-23 05:03:52: empty string!!!2021-07-23 06:08:15: empty string!!!2021-07-23 07:12:59: empty string!!!2021-07-23 08:16:26: empty string!!!2021-07-23 09:20:12: empty string!!!2021-07-23 10:24:05: empty string!!!2021-07-23 11:30:57: empty string!!!2021-07-23 12:36:32: empty string!!!2021-07-23 13:43:20: empty string!!!2021-07-23 14:50:56: empty string!!!2021-07-23 15:54:50: empty string!!!2021-07-23 17:01:48: empty string!!!2021-07-23 18:08:59: empty string!!!2021-07-23 19:12:29: empty string!!!2021-07-23 20:21:14: empty string!!!2021-07-23 21:27:49: empty string!!!2021-07-23 22:33:52: empty string!!!2021-07-23 23:36:35: empty string!!!2021-07-24 00:39:05: empty string!!!2021-07-24 01:41:35: empty string!!!2021-07-24 02:45:09: empty string!!!2021-07-24 03:46:22: empty string!!!2021-07-24 04:48:01: empty string!!!2021-07-24 05:49:30: empty string!!!2021-07-24 06:51:25: empty string!!!2021-07-24 07:52:29: empty string!!!2021-07-24 08:54:05: empty string!!!2021-07-24 09:55:23: empty string!!!2021-07-24 10:56:53: empty string!!!2021-07-24 12:59:47: empty string!!!2021-07-24 14:01:20: empty string!!!2021-07-24 15:03:10: empty string!!!2021-07-24 16:03:32: empty string!!!2021-07-24 17:05:38: empty string!!!2021-07-24 18:07:24: empty string!!!2021-07-24 19:09:00: empty string!!!2021-07-24 20:10:23: empty string!!!2021-07-24 21:12:21: empty string!!!2021-07-24 22:14:19: empty string!!!2021-07-24 23:16:28: empty string!!!2021-07-25 00:19:00: empty string!!!2021-07-25 02:24:19: empty string!!!2021-07-25 03:25:17: empty string!!!2021-07-25 04:27:18: empty string!!!2021-07-25 05:28:24: empty string!!!2021-07-25 06:31:38: empty string!!!2021-07-25 07:32:47: empty string!!!2021-07-25 08:34:16: empty string!!!2021-07-25 09:35:16: empty string!!!2021-07-25 10:37:08: empty string!!!2021-07-25 11:38:57: empty string!!!2021-07-25 12:40:35: empty string!!!2021-07-25 13:42:24: empty string!!!2021-07-25 14:44:23: empty string!!!2021-07-25 15:46:28: empty string!!!2021-07-25 16:48:17: empty string!!!2021-07-25 17:50:00: empty string!!!2021-07-25 18:51:31: empty string!!!2021-07-25 19:52:57: empty string!!!2021-07-25 20:54:43: empty string!!!2021-07-25 21:56:46: empty string!!!2021-07-25 22:58:32: empty string!!!2021-07-26 00:00:23: empty string!!!2021-07-26 01:02:15: empty string!!!2021-07-26 02:03:53: empty string!!!2021-07-26 03:04:57: empty string!!!2021-07-26 04:06:30: empty string!!!2021-07-26 05:07:50: empty string!!!2021-07-26 07:11:14: empty string!!!2021-07-26 08:12:25: empty string!!!2021-07-26 09:14:13: empty string!!!2021-07-26 10:16:21: empty string!!!2021-07-26 11:17:53: empty string!!!2021-07-26 12:19:11: empty string!!!2021-07-26 13:21:56: empty string!!!2021-07-26 14:23:52: empty string!!!2021-07-26 14:25:21: empty string!!!2021-07-26 15:26:58: empty string!!!2021-07-26 16:28:41: empty string!!!2021-07-26 17:30:36: empty string!!!2021-07-26 18:32:18: empty string!!!2021-09-02 14:10:03: empty string!!!2021-09-02 09:10:03: empty string!!!2021-09-22 15:43:23: empty string!!!2021-09-22 15:43:26: empty string!!!2021-09-27 13:19:54: empty string!!!2021-10-04 14:37:25: empty string!!!2021-10-05 16:10:13: empty string!!!2021-10-05 16:10:13: empty string!!!2021-10-05 16:10:14: empty string!!!2021-10-05 16:10:15: empty string!!!2021-10-05 16:10:15: empty string!!!2021-10-05 16:10:16: empty string!!!2021-10-05 16:10:16: empty string!!!2021-10-05 16:10:16: empty string!!!2021-10-05 16:10:17: empty string!!!2021-10-05 16:10:18: empty string!!!2021-10-05 16:10:18: empty string!!!2021-10-05 16:10:18: empty string!!!2021-10-07 15:07:08: empty string!!!2021-10-11 23:01:48: empty string!!!2021-10-11 18:01:48: empty string!!!2021-12-02 18:00:18: empty string!!!2021-12-02 18:11:25: empty string!!!2021-12-07 12:01:02: empty string!!!2021-12-08 22:09:16: empty string!!!2021-12-16 21:33:40: empty string!!!2021-12-17 22:34:14: empty string!!!2021-12-26 17:12:24: empty string!!!2021-12-27 11:41:47: empty string!!!2021-12-27 16:07:07: empty string!!!2021-12-28 16:26:32: empty string!!!2021-12-28 10:26:32: empty string!!!2022-01-01 18:21:47: 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  file_put_contents(/var/www/html/pcs/application/views/phpqrcode/cache/mask_0/mask_21_0.dat): failed to open stream: Permission denied</p>
+<p>Filename: phpqrcode/qrmask.php</p>
+<p>Line Number: 155</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 155<br />
+			Function: file_put_contents			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 311<br />
+			Function: makeMaskNo			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 216<br />
+			Function: mask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 240<br />
+			Function: encodeMask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 279<br />
+			Function: encodeInput			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 467<br />
+			Function: encodeString			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 485<br />
+			Function: encode			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 286<br />
+			Function: encodePNG			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/chalanViewVCMS.php<br />
+			Line: 11<br />
+			Function: png			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/controllers/GateController.php<br />
+			Line: 1548<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>2022-01-08 14:56:13: empty string!!!2022-01-08 20:54:43: empty string!!!2022-01-12 23:19:02: empty string!!!2022-01-15 02:54:19: empty string!!!2022-01-15 03:26:50: empty string!!!2022-01-19 20:35:40: empty string!!!2022-01-23 12:26:38: empty string!!!2022-01-23 12:43:42: empty string!!!2022-01-30 12:23:40: empty string!!!2022-01-30 14:22:01: 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  file_put_contents(/var/www/html/pcs/application/views/phpqrcode/cache/mask_0/mask_21_0.dat): failed to open stream: Permission denied</p>
+<p>Filename: phpqrcode/qrmask.php</p>
+<p>Line Number: 155</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 155<br />
+			Function: file_put_contents			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 311<br />
+			Function: makeMaskNo			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 216<br />
+			Function: mask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 240<br />
+			Function: encodeMask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 279<br />
+			Function: encodeInput			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 467<br />
+			Function: encodeString			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 485<br />
+			Function: encode			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 286<br />
+			Function: encodePNG			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/chalanViewVCMS.php<br />
+			Line: 11<br />
+			Function: png			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/controllers/GateController.php<br />
+			Line: 1561<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>2022-01-31 03:33:24: empty string!!!2022-02-02 11:37:53: empty string!!!2022-02-04 07:53:11: empty string!!!2022-02-07 13:55:38: 
+<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
+
+<h4>A PHP Error was encountered</h4>
+
+<p>Severity: Warning</p>
+<p>Message:  file_put_contents(/var/www/html/pcs/application/views/phpqrcode/cache/mask_0/mask_21_0.dat): failed to open stream: Permission denied</p>
+<p>Filename: phpqrcode/qrmask.php</p>
+<p>Line Number: 155</p>
+
+
+	<p>Backtrace:</p>
+	
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 155<br />
+			Function: file_put_contents			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrmask.php<br />
+			Line: 311<br />
+			Function: makeMaskNo			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 216<br />
+			Function: mask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 240<br />
+			Function: encodeMask			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 279<br />
+			Function: encodeInput			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 467<br />
+			Function: encodeString			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 485<br />
+			Function: encode			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/phpqrcode/qrencode.php<br />
+			Line: 286<br />
+			Function: encodePNG			</p>
+
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/views/chalanViewVCMS.php<br />
+			Line: 10<br />
+			Function: png			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/application/controllers/GateController.php<br />
+			Line: 1561<br />
+			Function: view			</p>
+
+		
+	
+		
+	
+		
+	
+		
+			<p style="margin-left:10px">
+			File: /var/www/html/pcs/index.php<br />
+			Line: 315<br />
+			Function: require_once			</p>
+
+		
+	
+
+</div>2022-02-16 12:19:01: empty string!!!2022-02-17 01:33:39: empty string!!!2022-02-24 12:26:21: empty string!!!2022-02-24 06:26:21: empty string!!!2022-02-25 11:40:05: empty string!!!2022-03-06 21:37:41: empty string!!!2022-03-07 00:09:07: empty string!!!2022-03-07 00:25:03: empty string!!!2023-04-23 23:47:11: empty string!!!2023-04-23 23:48:02: empty string!!!
